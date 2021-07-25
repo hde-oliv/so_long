@@ -2,3 +2,4 @@ sources/libft.h
 sources/mlx.h
 sources/so_long.h
 tests/so_long.h
+tests.out
