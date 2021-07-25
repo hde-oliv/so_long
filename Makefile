@@ -26,7 +26,7 @@ MLX_DIR	:=	minilibx
 LFT_DIR	:=	libft
 
 
-all:		obj mlx libft $(NAME)
+all:		obj mlx lft $(NAME)
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(CC) $(CFLAGS) $(OFLAGS) -c $< -o $@ $(IFLAGS)/$(INCLS) $(IFLAGS)/$(MLX_DIR) $(IFLAGS)/$(LFT_DIR)
