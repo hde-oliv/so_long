@@ -1,12 +1,21 @@
-SRC		:=	so_long.c
+FSRC	:=
+MSRC	:=	so_long.c
+TSRC	:=
 
 SRC_DIR :=	sources
 INC_DIR :=	headers
 OBJ_DIR :=	objects
+TST_DIR	:=	tests
 
 INCLS   :=	$(INC_DIR)
-SRCS	:=	$(addprefix $(SRC_DIR)/,$(SRC))
-OBJS    :=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+MSRCS	:=	$(addprefix $(SRC_DIR)/,$(MSRC))
+MOBJS	:=	$(MSRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+FSRCS	:=	$(addprefix $(SRC_DIR)/,$(FSRC))
+FOBJS	:=	$(FSRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+TSRCS	:=	$(addprefix $(TST_DIR)/,$(TSRC))
 
 CC		:=	clang
 
@@ -31,8 +40,8 @@ all:		obj mlx lft $(NAME)
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(CC) $(CFLAGS) $(OFLAGS) -c $< -o $@ $(IFLAGS)/$(INCLS) $(IFLAGS)/$(MLX_DIR) $(IFLAGS)/$(LFT_DIR)
 
-$(NAME):	$(OBJS)
-			$(CC) $(OBJS) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o $(NAME)
+$(NAME):	$(FOBJS) $(MOBJS)
+			$(CC) $(FOBJS) $(MOBJS) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o $(NAME)
 
 clean:
 			$(MAKE) -C $(LFT_DIR) clean
@@ -53,5 +62,11 @@ lft:
 
 obj:
 			mkdir -p $(OBJ_DIR)
+
+test:		OFLAGS=$(TFLAGS)
+
+test:		fclean obj mlx lft $(FOBJS)
+			$(CC) $(TFLAGS) $(FOBJS) $(TSRCS) $(IFLAGS)/$(TST_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o tests.out
+			./tests.out && rm -rf tests.out
 
 .PHONY: 	all clean fclean re obj tests mlx lft
