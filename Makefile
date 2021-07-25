@@ -14,7 +14,7 @@ CFLAGS	+=	-Wall -Wextra -Werror -pedantic
 IFLAGS	+=	-I.
 LFLAGS	+=	-L.
 TFLAGS	+=	-fsanitize=address -g3
-MFLAGS	+=	-lmlx_Linux -lXext -lX11 -lm -lft
+MFLAGS	+=	-lmlx_Linux -lXext -lX11 -lft
 OFLAGS	+=	-O3 -pthread
 
 RM		:=	rm -rf
