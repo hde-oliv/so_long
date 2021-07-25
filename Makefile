@@ -67,6 +67,6 @@ test:		OFLAGS=$(TFLAGS)
 
 test:		fclean obj mlx lft $(FOBJS)
 			$(CC) $(TFLAGS) $(FOBJS) $(TSRCS) $(IFLAGS)/$(TST_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o tests.out
-			./tests.out && rm -rf tests.out
+			./tests.out
 
 .PHONY: 	all clean fclean re obj tests mlx lft
