@@ -28,5 +28,6 @@ int	main(void)
 	print_result(is_map_with_invalid_name_7());
 	print_result(is_map_with_invalid_name_8());
 	print_result(is_map_with_invalid_name_9());
+	printf("\n");
 	return (err);
 }
