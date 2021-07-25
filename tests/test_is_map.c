@@ -42,7 +42,7 @@ bool	is_map_with_invalid_name_4(void)
 bool	is_map_with_invalid_name_5(void)
 {
 	is_map_bool = is_map(".ber");
-	return (result_analyzer(is_map_bool, false));
+	return (result_analyzer(is_map_bool, true));
 }
 
 bool	is_map_with_invalid_name_6(void)
