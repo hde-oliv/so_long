@@ -1,6 +1,6 @@
-FSRC	:=
+FSRC	:=	map_parser.c
 MSRC	:=	so_long.c
-TSRC	:=
+TSRC	:=	tests.c test_is_map.c
 
 SRC_DIR :=	sources
 INC_DIR :=	headers
@@ -67,6 +67,6 @@ test:		OFLAGS=$(TFLAGS)
 
 test:		fclean obj mlx lft $(FOBJS)
 			$(CC) $(TFLAGS) $(FOBJS) $(TSRCS) $(IFLAGS)/$(TST_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o tests.out
-			./tests.out && rm -rf tests.out
+			./tests.out
 
 .PHONY: 	all clean fclean re obj tests mlx lft
