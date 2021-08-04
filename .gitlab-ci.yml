@@ -1,9 +1,5 @@
 image: fedora:latest
 
-stages:
-  - build
-  - test
-
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
@@ -19,23 +15,19 @@ before_script:
   - uname -a
   - pip install norminette
 
-
 build:
-  stage: build
   script:
-    - make
-    - make clean
-    - make fclean
-    - make re
+     - make
+     - make clean
+     - make fclean
+     - make re
 
-unit-test:
-  stage: test
+test:
   script:
-    - make test
+     - make test
 
 norme:
-  stage: test
   script:
-    - norminette headers
-    - norminette libft
-    - norminette sources
+     - norminette headers
+     - norminette libft
+     - norminette sources
