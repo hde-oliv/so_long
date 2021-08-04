@@ -1,4 +1,4 @@
-image: python:3.9.6-buster
+image: archlinux:base-devel
 
 stages:
   - build
@@ -13,10 +13,11 @@ cache:
     - venv/
 
 before_script:
+  - pacman -S libbsd python
   - python -V
   - uname -a
   - pip install norminette
-  - apt install libbsd-dev
+
 
 build:
   stage: build
