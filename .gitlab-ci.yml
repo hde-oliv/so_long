@@ -13,7 +13,7 @@ cache:
     - venv/
 
 before_script:
-  - dnf install libbsd python clang python-pip -y
+  - dnf install libbsd libbsd-devel python clang python-pip -y
   - dnf groupinstall "X Software Development" -y
   - python -V
   - uname -a
