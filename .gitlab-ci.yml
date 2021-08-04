@@ -13,7 +13,7 @@ cache:
     - venv/
 
 before_script:
-  - dnf install libbsd python clang -y
+  - dnf install libbsd python clang python-pip -y
   - python -V
   - uname -a
   - pip install norminette
