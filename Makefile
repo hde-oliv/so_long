@@ -45,7 +45,6 @@ $(NAME):	$(FOBJS) $(MOBJS)
 
 clean:
 			$(MAKE) -C $(LFT_DIR) clean
-			$(MAKE) -C $(MLX_DIR) clean
 			$(RM) $(OBJS) $(OBJ_DIR)
 
 fclean: 	clean
