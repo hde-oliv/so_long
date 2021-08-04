@@ -13,7 +13,7 @@ cache:
     - venv/
 
 before_script:
-  - pacman -S libbsd python
+  - pacman -Sy libbsd python
   - python -V
   - uname -a
   - pip install norminette
