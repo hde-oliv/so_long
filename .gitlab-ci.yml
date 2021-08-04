@@ -1,4 +1,4 @@
-image: archlinux:base-devel
+image: fedora:latest
 
 stages:
   - build
@@ -13,7 +13,7 @@ cache:
     - venv/
 
 before_script:
-  - pacman -Sy libbsd python
+  - dnf install libbsd python clang -y
   - python -V
   - uname -a
   - pip install norminette
