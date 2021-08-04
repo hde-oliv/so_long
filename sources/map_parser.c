@@ -8,5 +8,5 @@ bool	is_map(char *arg)
 	dot_location = ft_strrchr(arg, '.');
 	if (dot_location)
 		return (!ft_strncmp(dot_location, ".ber", 4));
-	return false;
+	return (false);
 }
