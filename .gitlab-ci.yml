@@ -1,0 +1,39 @@
+image: python:3.9.6-buster
+
+stages:
+  - build
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - python -V
+  - uname -a
+  - pip install norminette
+  - sudo apt install libbsd-dev
+
+build:
+  stage: build
+  script:
+    - make
+    - make clean
+    - make fclean
+    - make re
+
+unit-test:
+  stage: test
+  script:
+    - make test
+
+norme:
+  stage: test
+  script:
+    - norminette headers
+    - norminette libft
+    - norminette sources
