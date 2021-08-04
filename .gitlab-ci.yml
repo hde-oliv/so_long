@@ -16,7 +16,7 @@ before_script:
   - python -V
   - uname -a
   - pip install norminette
-  - sudo apt install libbsd-dev
+  - apt install libbsd-dev
 
 build:
   stage: build
