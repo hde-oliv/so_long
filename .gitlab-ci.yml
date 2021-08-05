@@ -3,14 +3,6 @@ image: fedora:latest
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
-include:
-  - template: Code-Quality.gitlab-ci.yml
-
-code_quality:
-  artifacts:
-    paths: [gl-code-quality-report.json]
-  variables:
-    CODE_QUALITY_IMAGE: "registry.example.com/codequality-fork:latest"
 
 cache:
   paths:
