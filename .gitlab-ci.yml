@@ -3,10 +3,12 @@ image: fedora:latest
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
+include:
+  - template: Code-Quality.gitlab-ci.yml
+
 cache:
   paths:
     - .cache/pip
-    - venv/
 
 before_script:
   - dnf install libbsd libbsd-devel python clang python-pip -y
