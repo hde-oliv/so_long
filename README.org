@@ -1,0 +1,7 @@
+#+TITLE: So Long
+#+AUTHOR: Henrique Rocha
+#+DESCRIPTION: A 2D platform game.
+
+[[https://github.com/hde-oliv/so_long/actions/workflows/build.yml/badge.svg]][[https://github.com/hde-oliv/so_long/actions/workflows/norminette.yml/badge.svg]][[https://github.com/hde-oliv/so_long/actions/workflows/tests.yml/badge.svg]]
+
+** WIC
