@@ -7,10 +7,13 @@ bool	row_validator(char *row)
 
 	len = ft_strlen(row);
 	while (len--)
-		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || row[len] == '0' || row[len] == '1')
+	{
+		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || \
+			row[len] == '0' || row[len] == '1')
 			continue ;
 		else
 			return (false);
+	}
 	return (true);
 }
 
