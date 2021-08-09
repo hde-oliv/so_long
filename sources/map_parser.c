@@ -34,7 +34,6 @@ bool	is_map(char *arg)
 
 t_map	*map_parser(int fd)
 {
-	int		gnl;
 	t_map	*game_map;
 	char	*row;
 	t_list	*rows;
