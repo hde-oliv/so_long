@@ -539,6 +539,10 @@ int			ft_abs(int n);
  */
 long long	ft_atoll(const char *str);
 
+
+int	get_next_line(int fd, char **line);
+# define BUFFER_SIZE 10
+
 /* btree functions TODO */
 t_btree		*btree_create_node(void *item);
 void		btree_apply_prefix(t_btree *root, void (*applyf)(void *));
