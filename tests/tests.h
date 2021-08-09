@@ -13,6 +13,15 @@ bool	is_map_with_invalid_name_6(void);
 bool	is_map_with_invalid_name_7(void);
 bool	is_map_with_invalid_name_8(void);
 bool	is_map_with_invalid_name_9(void);
-
+bool	row_validator_with_valid_row_1(void);
+bool	row_validator_with_valid_row_2(void);
+bool	row_validator_with_valid_row_3(void);
+bool	row_validator_with_invalid_row_1(void);
+bool	row_validator_with_invalid_row_2(void);
+bool	row_validator_with_invalid_row_3(void);
+bool	row_validator_with_invalid_row_4(void);
+bool	row_validator_with_invalid_row_5(void);
+bool	row_validator_with_invalid_row_6(void);
+bool	row_validator_with_invalid_row_7(void);
 
 #endif
