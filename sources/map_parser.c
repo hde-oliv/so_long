@@ -6,7 +6,7 @@ bool	row_validator(char *row)
 	static int	fixed_len;
 	int			len;
 
-	if (!len)
+	if (!fixed_len)
 		fixed_len = ft_strlen(row);
 	len = ft_strlen(row);
 	if (len != fixed_len || fixed_len < 3)
