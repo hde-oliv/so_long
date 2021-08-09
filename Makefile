@@ -1,4 +1,4 @@
-FSRC	:=	map_parser.c
+FSRC	:=	map_parser.c error.c
 MSRC	:=	so_long.c
 TSRC	:=	tests.c test_is_map.c test_row_validator.c
 
