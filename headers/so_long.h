@@ -23,6 +23,6 @@ bool	row_validator(char *row);
 
 void	error(const char *err_func);
 void	my_error(const char *function);
-void	invalid_map(t_list **rows, const char *function);
+void	invalid_map(t_list **rows);
 
 #endif

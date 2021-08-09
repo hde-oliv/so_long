@@ -3,9 +3,7 @@
 
 void	my_error(const char *function)
 {
-	if (!ft_memcmp(function, "row_validator", 13))
-		printf(EINVM);
-	else if (!ft_memcmp(function, "row_consistency", 15))
+	if (!ft_memcmp(function, "map_parser", 10))
 		printf(EINVM);
 }
 
@@ -19,11 +17,11 @@ void	error(const char *err_func)
 	exit(1);
 }
 
-void	invalid_map(t_list **rows, const char *function)
+void	invalid_map(t_list **rows)
 {
     void (*free_ptr)(void *);
 
 	free_ptr = &free;
 	ft_lstclear(rows, free_ptr);
-	error(function);
+	error("map_parser");
 }
