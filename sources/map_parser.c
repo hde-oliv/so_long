@@ -6,6 +6,8 @@ bool	row_validator(char *row)
 	int	len;
 
 	len = ft_strlen(row);
+	if (len < 3)
+		return (false);
 	while (len--)
 	{
 		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || \
