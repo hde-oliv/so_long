@@ -2,32 +2,29 @@
 
 static int	err;
 
-static void print_result(bool check)
+static void print_result(bool check, int number)
 {
-	static short	print_result_counter;
-
 	if (check)
-		printf("%i.OK   ", print_result_counter);
+		printf("%i.OK   ", number);
 	else
 	{
-		printf("%i.KO   ", print_result_counter);
+		printf("%i.KO   ", number);
 		err = 1;
 	}
-	print_result_counter++;
 }
 
 int	main(void)
 {
-	print_result(is_map_with_valid_name());
-	print_result(is_map_with_invalid_name_1());
-	print_result(is_map_with_invalid_name_2());
-	print_result(is_map_with_invalid_name_3());
-	print_result(is_map_with_invalid_name_4());
-	print_result(is_map_with_invalid_name_5());
-	print_result(is_map_with_invalid_name_6());
-	print_result(is_map_with_invalid_name_7());
-	print_result(is_map_with_invalid_name_8());
-	print_result(is_map_with_invalid_name_9());
+	print_result(is_map_with_valid_name(), 0);
+	print_result(is_map_with_invalid_name_1(), 1);
+	print_result(is_map_with_invalid_name_2(), 2);
+	print_result(is_map_with_invalid_name_3(), 3);
+	print_result(is_map_with_invalid_name_4(), 4);
+	print_result(is_map_with_invalid_name_5(), 5);
+	print_result(is_map_with_invalid_name_6(), 6);
+	print_result(is_map_with_invalid_name_7(), 7);
+	print_result(is_map_with_invalid_name_8(), 8);
+	print_result(is_map_with_invalid_name_9(), 9);
 	printf("\n");
 	return (err);
 }
