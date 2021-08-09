@@ -17,6 +17,7 @@ typedef struct s_map
 
 bool	is_map(char *arg);
 bool	row_validator(char *row);
+t_map	*map_parser(int fd);
 
 /* error functions */
 # define EINVM "Invalid map.\n"
