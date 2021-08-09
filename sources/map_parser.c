@@ -3,10 +3,13 @@
 
 bool	row_validator(char *row)
 {
-	int	len;
+	static int	fixed_len;
+	int			len;
 
+	if (!len)
+		fixed_len = ft_strlen(row);
 	len = ft_strlen(row);
-	if (len < 3)
+	if (len != fixed_len || fixed_len < 3)
 		return (false);
 	while (len--)
 	{
