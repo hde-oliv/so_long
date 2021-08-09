@@ -19,7 +19,7 @@ void	error(const char *err_func)
 
 void	invalid_map(t_list **rows)
 {
-    void (*free_ptr)(void *);
+	void	(*free_ptr)(void *);
 
 	free_ptr = &free;
 	ft_lstclear(rows, free_ptr);
