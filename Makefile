@@ -1,6 +1,6 @@
 FSRC	:=	map_parser.c
 MSRC	:=	so_long.c
-TSRC	:=	tests.c test_is_map.c
+TSRC	:=	tests.c test_is_map.c test_row_validator.c
 
 SRC_DIR :=	sources
 INC_DIR :=	headers
