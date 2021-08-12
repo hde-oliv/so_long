@@ -3,8 +3,12 @@
 
 void	r_error(const char *function)
 {
-	if (!ft_memcmp(function, "map_parser", 10))
-		printf(EINVM);
+	if (!ft_memcmp(function, "parse_map", 10))
+		printf("parse_map: %s", EINVM);
+	if (!ft_memcmp(function, "main", 4))
+		printf("main: %s", EINAR);
+	if (!ft_memcmp(function, "is_map", 6))
+		printf("is_map: %s", EINAM);
 }
 
 void	error(const char *err_func)
@@ -23,5 +27,5 @@ void	invalid_map(t_list **rows)
 
 	free_ptr = &free;
 	ft_lstclear(rows, free_ptr);
-	error("map_parser");
+	error("parse_map");
 }

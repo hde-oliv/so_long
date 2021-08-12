@@ -21,6 +21,8 @@ t_map	*parse_map(int fd);
 
 /* error functions */
 # define EINVM "Invalid map.\n"
+# define EINAR "Invalid number of arguments.\n"
+# define EINAM "The argument is not a map.\n"
 
 void	error(const char *err_func);
 void	r_error(const char *function);
