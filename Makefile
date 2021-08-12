@@ -19,7 +19,7 @@ TSRCS	:=	$(addprefix $(TST_DIR)/,$(TSRC))
 
 CC		:=	clang
 
-CFLAGS	+=	-Wall -Wextra -Werror -pedantic -g3
+CFLAGS	+=	-Wall -Wextra -Werror -pedantic
 IFLAGS	+=	-I.
 LFLAGS	+=	-L.
 TFLAGS	+=	-fsanitize=address -g3
@@ -62,10 +62,10 @@ lft:
 obj:
 			mkdir -p $(OBJ_DIR)
 
-test:		OFLAGS=$(TFLAGS)
+unit_tests:		OFLAGS=$(TFLAGS)
 
-test:		fclean obj mlx lft $(FOBJS)
+unit_tests:		fclean obj mlx lft $(FOBJS)
 			$(CC) $(TFLAGS) $(FOBJS) $(TSRCS) $(IFLAGS)/$(TST_DIR) $(IFLAGS)/$(INC_DIR) $(IFLAGS)/$(LFT_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o tests.out
 			./tests.out
 
-.PHONY: 	all clean fclean re obj test mlx lft
+.PHONY: 	all clean fclean re obj unit_tests mlx lft
