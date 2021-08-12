@@ -1,7 +1,7 @@
 #include "so_long.h"
 #include "libft.h"
 
-void	my_error(const char *function)
+void	r_error(const char *function)
 {
 	if (!ft_memcmp(function, "map_parser", 10))
 		printf(EINVM);
@@ -11,7 +11,7 @@ void	error(const char *err_func)
 {
 	printf("Error\n");
 	if (errno == 0)
-		my_error(err_func);
+		r_error(err_func);
 	else
 		perror(err_func);
 	exit(1);

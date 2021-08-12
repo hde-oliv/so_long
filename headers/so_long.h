@@ -23,7 +23,7 @@ t_map	*parse_map(int fd);
 # define EINVM "Invalid map.\n"
 
 void	error(const char *err_func);
-void	my_error(const char *function);
+void	r_error(const char *function);
 void	invalid_map(t_list **rows);
 
 #endif
