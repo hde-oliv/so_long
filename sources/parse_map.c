@@ -1,27 +1,6 @@
 #include "so_long.h"
 #include "libft.h"
 
-bool	validate_row(char *row)
-{
-	static int	fixed_len;
-	int			len;
-
-	if (!fixed_len)
-		fixed_len = ft_strlen(row);
-	len = ft_strlen(row);
-	if (len != fixed_len || fixed_len < 3)
-		return (false);
-	while (len--)
-	{
-		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || \
-			row[len] == '0' || row[len] == '1')
-			continue ;
-		else
-			return (false);
-	}
-	return (true);
-}
-
 bool	is_map(char *arg)
 {
 	char	*dot_location;
@@ -55,4 +34,25 @@ t_map	*parse_map(int fd)
 	game_map->rows = rows;
 	free(row);
 	return (game_map);
+}
+
+bool	validate_row(char *row)
+{
+	static int	fixed_len;
+	int			len;
+
+	if (!fixed_len)
+		fixed_len = ft_strlen(row);
+	len = ft_strlen(row);
+	if (len != fixed_len || fixed_len < 3)
+		return (false);
+	while (len--)
+	{
+		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || \
+			row[len] == '0' || row[len] == '1')
+			continue ;
+		else
+			return (false);
+	}
+	return (true);
 }
