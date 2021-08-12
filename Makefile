@@ -1,6 +1,6 @@
-FSRC	:=	map_parser.c error.c
+FSRC	:=	parse_map.c handle_error.c
 MSRC	:=	so_long.c
-TSRC	:=	tests.c test_is_map.c test_row_validator.c
+TSRC	:=	tests.c test_is_map.c test_validate_row.c
 
 SRC_DIR :=	sources
 INC_DIR :=	headers
@@ -19,7 +19,7 @@ TSRCS	:=	$(addprefix $(TST_DIR)/,$(TSRC))
 
 CC		:=	clang
 
-CFLAGS	+=	-Wall -Wextra -Werror -pedantic
+CFLAGS	+=	-Wall -Wextra -Werror -pedantic -g3
 IFLAGS	+=	-I.
 LFLAGS	+=	-L.
 TFLAGS	+=	-fsanitize=address -g3
