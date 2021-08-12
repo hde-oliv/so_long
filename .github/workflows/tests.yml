@@ -14,5 +14,5 @@ jobs:
     - name: Install dependencies
       run: |
        sudo apt install libx11-dev xorg-dev libbsd-dev
-    - name: make test
-      run: make test
+    - name: make unit_tests
+      run: make unit_tests
