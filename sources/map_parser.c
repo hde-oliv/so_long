@@ -1,7 +1,7 @@
 #include "so_long.h"
 #include "libft.h"
 
-bool	row_validator(char *row)
+bool	validate_row(char *row)
 {
 	static int	fixed_len;
 	int			len;
@@ -32,7 +32,7 @@ bool	is_map(char *arg)
 	return (false);
 }
 
-t_map	*map_parser(int fd)
+t_map	*parse_map(int fd)
 {
 	t_map	*game_map;
 	char	*row;
@@ -43,7 +43,7 @@ t_map	*map_parser(int fd)
 	{
 		if (!row)
 			error("malloc");
-		else if (!row_validator(row))
+		else if (!validate_row(row))
 			invalid_map(&rows);
 		ft_lstadd_back(&rows, ft_lstnew(row));
 	}
