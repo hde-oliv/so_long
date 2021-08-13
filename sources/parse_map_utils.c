@@ -52,3 +52,16 @@ bool	is_map(char *arg)
 		return (!ft_strncmp(dot_location, ".ber", 4));
 	return (false);
 }
+
+bool	strcchr(char *s, char c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			continue;
+		else
+			return (false);
+		s++;
+	}
+	return (true);
+}
