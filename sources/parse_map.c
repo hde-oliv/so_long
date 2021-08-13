@@ -38,10 +38,13 @@ t_map	*parse_map(int fd)
 
 bool	validate_row(char *row)
 {
+	static int	fixed_len;
 	int			len;
 
+	if (!fixed_len)
+		fixed_len = ft_strlen(row);
 	len = ft_strlen(row);
-	if (len < 3)
+	if (len != fixed_len || fixed_len < 3)
 		return (false);
 	while (len--)
 	{
