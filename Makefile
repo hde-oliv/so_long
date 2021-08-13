@@ -24,7 +24,7 @@ IFLAGS	+=	-I.
 LFLAGS	+=	-L.
 TFLAGS	+=	-fsanitize=address -g3
 MFLAGS	+=	-lmlx_Linux -lXext -lX11 -lft
-OFLAGS	+=	-O3 -pthread
+OFLAGS	+=	-O3
 
 RM		:=	rm -rf
 
