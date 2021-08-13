@@ -1,7 +1,7 @@
 #include "so_long.h"
 #include "libft.h"
 
-static int	count_exits(char *row)
+int	count_exits(char *row)
 {
 	int	answer;
 
@@ -15,7 +15,7 @@ static int	count_exits(char *row)
 	return (answer);
 }
 
-static int	count_players(char *row)
+int	count_players(char *row)
 {
 	int	answer;
 
@@ -29,7 +29,7 @@ static int	count_players(char *row)
 	return (answer);
 }
 
-static int	count_collectibles(char *row)
+int	count_collectibles(char *row)
 {
 	int	answer;
 
@@ -43,20 +43,12 @@ static int	count_collectibles(char *row)
 	return (answer);
 }
 
-bool	validate_map(t_list *rows)
+bool	is_map(char *arg)
 {
-	static int	collectibles;
-	static int	exits;
-	static int	players;
+	char	*dot_location;
 
-	while (rows)
-	{
-		exits += count_exits(rows->content);
-		players += count_players(rows->content);
-		collectibles += count_collectibles(rows->content);
-		rows = rows->next;
-	}
-	if (!collectibles || !exits || !players)
-		return (false);
-	return (true);
+	dot_location = ft_strrchr(arg, '.');
+	if (dot_location)
+		return (!ft_strncmp(dot_location, ".ber", 4));
+	return (false);
 }

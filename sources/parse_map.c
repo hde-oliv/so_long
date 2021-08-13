@@ -1,16 +1,6 @@
 #include "so_long.h"
 #include "libft.h"
 
-bool	is_map(char *arg)
-{
-	char	*dot_location;
-
-	dot_location = ft_strrchr(arg, '.');
-	if (dot_location)
-		return (!ft_strncmp(dot_location, ".ber", 4));
-	return (false);
-}
-
 t_map	*parse_map(int fd)
 {
 	t_map	*game_map;
@@ -54,5 +44,23 @@ bool	validate_row(char *row)
 		else
 			return (false);
 	}
+	return (true);
+}
+
+bool	validate_map(t_list *rows)
+{
+	static int	collectibles;
+	static int	exits;
+	static int	players;
+
+	while (rows)
+	{
+		exits += count_exits(rows->content);
+		players += count_players(rows->content);
+		collectibles += count_collectibles(rows->content);
+		rows = rows->next;
+	}
+	if (!collectibles || !exits || !players)
+		return (false);
 	return (true);
 }
