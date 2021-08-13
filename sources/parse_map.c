@@ -62,7 +62,13 @@ bool	validate_map(t_list *rows)
 		collectibles += count_collectibles(rows->content);
 		rows = rows->next;
 	}
-	if (!collectibles || !exits || !players || !walls)
+	if (!collectibles)
+		return (false);
+	else if (!exits)
+		return (false);
+	else if (!players || players > 1)
+		return (false);
+	else if (!walls)
 		return (false);
 	return (true);
 }
