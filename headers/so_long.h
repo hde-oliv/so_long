@@ -25,7 +25,7 @@ bool	validate_map(t_list *rows);
 bool	validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
 
-/* error functions */
+/* error handling */
 # define EINVM "Invalid map.\n"
 # define EIEMP "Empty map.\n"
 # define EINAR "Invalid number of arguments.\n"
