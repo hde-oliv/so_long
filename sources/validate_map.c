@@ -16,6 +16,7 @@ bool	validate_map(t_list *rows)
 		tmp_size = ft_strlen(rows->content);
 		if (tmp_size != row_size)
 			return (false);
+		exits += count_exits(rows->content)
 		rows = rows->next;
 	}
 	if (!collectibles || !exits || !players)
@@ -23,3 +24,15 @@ bool	validate_map(t_list *rows)
 	return (true);
 }
 
+int	count_exits(char *row)
+{
+	int	answer;
+
+	while (*row)
+	{
+		if (*row == 'E')
+			answer++;
+		row++;
+	}
+	return (answer);
+}
