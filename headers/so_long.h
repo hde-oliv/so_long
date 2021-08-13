@@ -19,6 +19,7 @@ bool	is_map(char *arg);
 int		count_exits(char *row);
 int		count_players(char *row);
 int		count_collectibles(char *row);
+bool	strcchr(char *s, char c);
 bool	validate_row(char *row);
 bool	validate_map(t_list *rows);
 bool	validate_walls(t_list *rows);
