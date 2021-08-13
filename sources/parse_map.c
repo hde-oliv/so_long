@@ -52,7 +52,9 @@ bool	validate_map(t_list *rows)
 	static int	collectibles;
 	static int	exits;
 	static int	players;
+	static int	walls;
 
+	walls = validate_walls(rows);
 	while (rows)
 	{
 		exits += count_exits(rows->content);
@@ -60,7 +62,31 @@ bool	validate_map(t_list *rows)
 		collectibles += count_collectibles(rows->content);
 		rows = rows->next;
 	}
-	if (!collectibles || !exits || !players)
+	if (!collectibles || !exits || !players || !walls)
 		return (false);
+	return (true);
+}
+
+bool	validate_walls(t_list *rows)
+{
+	int		row_quantity;
+	int		row_size;
+	int		counter;
+	bool	answer;
+
+	counter = 0;
+	row_quantity = ft_lstsize(rows);
+	row_size = ft_strlen(rows->content);
+	answer = true;
+	while (counter < row_quantity)
+	{
+		if (counter == 0 || counter == (row_quantity - 1))
+			answer = strcchr(rows->content, '1');
+		else
+			answer = *((char *)rows->content) == '1' && \
+				*((char *)rows->content + row_size - 1) == '1';
+		if (answer == false)
+			return (false);
+	}
 	return (true);
 }

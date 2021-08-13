@@ -21,6 +21,7 @@ int		count_players(char *row);
 int		count_collectibles(char *row);
 bool	validate_row(char *row);
 bool	validate_map(t_list *rows);
+bool	validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
 
 /* error functions */
