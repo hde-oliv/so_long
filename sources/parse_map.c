@@ -87,6 +87,7 @@ bool	validate_walls(t_list *rows)
 				*((char *)rows->content + row_size - 1) == '1';
 		if (answer == false)
 			return (false);
+		rows = rows->next;
 	}
 	return (true);
 }
