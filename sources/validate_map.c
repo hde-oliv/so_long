@@ -5,6 +5,7 @@ static int	count_exits(char *row)
 {
 	int	answer;
 
+	answer = 0;
 	while (*row)
 	{
 		if (*row == 'E')
@@ -18,6 +19,7 @@ static int	count_players(char *row)
 {
 	int	answer;
 
+	answer = 0;
 	while (*row)
 	{
 		if (*row == 'P')
@@ -31,6 +33,7 @@ static int	count_collectibles(char *row)
 {
 	int	answer;
 
+	answer = 0;
 	while (*row)
 	{
 		if (*row == 'C')
