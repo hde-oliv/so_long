@@ -14,6 +14,32 @@ static int	count_exits(char *row)
 	return (answer);
 }
 
+static int	count_players(char *row)
+{
+	int	answer;
+
+	while (*row)
+	{
+		if (*row == 'P')
+			answer++;
+		row++;
+	}
+	return (answer);
+}
+
+static int	count_collectibles(char *row)
+{
+	int	answer;
+
+	while (*row)
+	{
+		if (*row == 'C')
+			answer++;
+		row++;
+	}
+	return (answer);
+}
+
 bool	validate_map(t_list *rows)
 {
 	static int	collectibles;
@@ -30,6 +56,8 @@ bool	validate_map(t_list *rows)
 		if (tmp_size != row_size)
 			return (false);
 		exits += count_exits(rows->content);
+		players += count_players(rows->content);
+		collectibles += count_collectibles(rows->content);
 		rows = rows->next;
 	}
 	if (!collectibles || !exits || !players)
