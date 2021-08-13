@@ -94,6 +94,7 @@ bool	validate_walls(t_list *rows)
 		if (answer == false)
 			return (false);
 		rows = rows->next;
+		counter++;
 	}
 	return (true);
 }
