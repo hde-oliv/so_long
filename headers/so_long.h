@@ -7,7 +7,7 @@
 # include <unistd.h>
 # include "libft.h"
 
-/* map parsing functions */
+/* map parsing */
 typedef struct s_map
 {
 	int		height;
@@ -16,9 +16,12 @@ typedef struct s_map
 }	t_map;
 
 bool	is_map(char *arg);
+int		count_exits(char *row);
+int		count_players(char *row);
+int		count_collectibles(char *row);
 bool	validate_row(char *row);
-t_map	*parse_map(int fd);
 bool	validate_map(t_list *rows);
+t_map	*parse_map(int fd);
 
 /* error functions */
 # define EINVM "Invalid map.\n"
