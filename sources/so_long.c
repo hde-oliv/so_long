@@ -2,6 +2,14 @@
 #include "mlx.h"
 #include "so_long.h"
 
+/*
+** parse_map: OK
+** render_game: TODO
+** start_game: TODO
+** handle_game: TODO
+** end_game: TODO
+*/
+
 int	main(int argc, char *argv[])
 {
 	t_map	*game_map;
@@ -15,15 +23,5 @@ int	main(int argc, char *argv[])
 	if (map_fd == -1)
 		error("open");
 	game_map = parse_map(map_fd);
-
-
-	// render_game
-	// start_game
-	// handle_game
-	// end_game
-	//  /* void	(*free_ptr)(void *); */
-	//  /* free_ptr = &free; */
-	//  /* ft_lstclear(&game_map->rows, free_ptr); */
-	//  /* free(game_map); */
 	return (0);
 }
