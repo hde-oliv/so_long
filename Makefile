@@ -76,7 +76,7 @@ leak:		fclean obj mlx lft $(FOBJS) $(MOBJS)
 dbug:		OFLAGS=-g
 
 dbug:		fclean obj mlx lft $(FOBJS) $(MOBJS)
-			$(CC) $(TFLAGS) $(FOBJS) $(MOBJS) $(IFLAGS)/$(TST_DIR) $(IFLAGS)/$(INC_DIR) $(IFLAGS)/$(LFT_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o $(NAME)
+			$(CC) -g $(FOBJS) $(MOBJS) $(IFLAGS)/$(TST_DIR) $(IFLAGS)/$(INC_DIR) $(IFLAGS)/$(LFT_DIR) $(LFLAGS)/$(MLX_DIR) $(LFLAGS)/$(LFT_DIR) $(MFLAGS) -o $(NAME)
 
 
 .PHONY: 	all clean fclean re obj unit_tests mlx lft
