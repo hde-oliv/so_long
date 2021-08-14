@@ -57,9 +57,7 @@ bool	strcchr(char *s, char c)
 {
 	while (*s)
 	{
-		if (*s == c)
-			continue;
-		else
+		if (*s != c)
 			return (false);
 		s++;
 	}
