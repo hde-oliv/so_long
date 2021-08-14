@@ -16,6 +16,8 @@ t_map	*parse_map(int fd)
 			invalid_map(&rows);
 		ft_lstadd_back(&rows, ft_lstnew(row));
 	}
+	if (!validate_map(rows))
+		error("parse_map");
 	game_map = (t_map *) malloc(sizeof(t_map));
 	if (!game_map)
 		error("malloc");
