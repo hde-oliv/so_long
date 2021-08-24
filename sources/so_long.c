@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
+/*   Updated: 2021/08/24 13:38:11 by hde-oliv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "mlx.h"
 #include "so_long.h"
 
 /*
 ** parse_map: OK
-** render_game: TODO
-** start_game: TODO
-** handle_game: TODO
+** create_game: TODO
+** run_game: TODO
 ** end_game: TODO
 */
 
