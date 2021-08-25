@@ -33,7 +33,7 @@ t_map	*parse_map(int fd)
 	game_map = (t_map *) malloc(sizeof(t_map));
 	if (!game_map)
 		error("malloc");
-	game_map->width = ft_strlen(row);
+	game_map->width = ft_strlen(rows->content);
 	game_map->height = ft_lstsize(rows);
 	game_map->rows = rows;
 	free(row);
