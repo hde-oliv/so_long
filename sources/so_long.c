@@ -23,6 +23,8 @@
 
 int	main(int argc, char *argv[])
 {
+	void	*mlx;
+	void	*mlx_win;
 	t_map	*game_map;
 	int		map_fd;
 
@@ -34,5 +36,8 @@ int	main(int argc, char *argv[])
 	if (map_fd == -1)
 		error("open");
 	game_map = parse_map(map_fd);
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, game_map->width * 32, game_map->height * 32, "So Long!");
+	mlx_loop(mlx);
 	return (0);
 }
