@@ -16,7 +16,7 @@
 
 /*
 ** parse_map: OK
-** create_game: TODO
+** create_game: OK
 ** run_game: TODO
 ** end_game: TODO
 */
@@ -35,5 +35,6 @@ int	main(int argc, char *argv[])
 		error("open");
     game.map = parse_map(map_fd);
 	create_game(&game);
+	mlx_loop(game.mlx);
 	return (0);
 }

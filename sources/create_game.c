@@ -20,7 +20,6 @@ void	create_game(t_game *game)
 	allocate_sprites(game);
 	create_images(game);
 	make_map(game);
-	mlx_loop(game->mlx);
 }
 
 void	allocate_sprites(t_game *game)
