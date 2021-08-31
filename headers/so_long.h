@@ -37,6 +37,14 @@ bool	validate_map(t_list *rows);
 bool	validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
 
+/* create_game */
+typedef struct s_game
+{
+	t_map	*map;
+	void	*mlx;
+	void	*mlx_win;
+}	t_game;
+
 /* error handling */
 # define EINVM "Invalid map.\n"
 # define EIEMP "Empty map.\n"
@@ -46,5 +54,4 @@ t_map	*parse_map(int fd);
 void	error(const char *err_func);
 void	r_error(const char *function);
 void	invalid_map(t_list **rows);
-
 #endif

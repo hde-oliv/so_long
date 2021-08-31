@@ -23,9 +23,7 @@
 
 int	main(int argc, char *argv[])
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_map	*game_map;
+	t_game	game;
 	int		map_fd;
 
 	if (argc != 2)
@@ -35,9 +33,9 @@ int	main(int argc, char *argv[])
 	map_fd = open(argv[1], O_RDONLY);
 	if (map_fd == -1)
 		error("open");
-	game_map = parse_map(map_fd);
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, game_map->width * 32, game_map->height * 32, "So Long!");
-	mlx_loop(mlx);
+	game.map = parse_map(map_fd);
+	game.mlx = mlx_init();
+	game.mlx_win = mlx_new_window(game.mlx, game.map->width * 32, game.map->height * 32, "So Long!");
+	mlx_loop(game.mlx);
 	return (0);
 }
