@@ -61,6 +61,8 @@ typedef struct s_game
 	t_img	*bg;
 	t_img	*coin;
 	t_img	*exit;
+	int		heroine_x;
+	int		heroine_y;
 }	t_game;
 
 void	create_game(t_game *game);
