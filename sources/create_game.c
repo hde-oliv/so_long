@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   create_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/08/31 10:16:58 by hde-oliv         ###   ########.fr       */
+/*   Created: 2021/08/31 10:16:33 by hde-oliv          #+#    #+#             */
+/*   Updated: 2021/08/31 10:16:33 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "mlx.h"
 #include "so_long.h"
+#include "mlx.h"
 
-/*
-** parse_map: OK
-** create_game: TODO
-** run_game: TODO
-** end_game: TODO
-*/
-
-int	main(int argc, char *argv[])
+void	create_game(t_game *game)
 {
-	t_game	game;
-	int		map_fd;
-
-	if (argc != 2)
-		error("main");
-	if (!is_map(argv[1]))
-		error("is_map");
-	map_fd = open(argv[1], O_RDONLY);
-	if (map_fd == -1)
-		error("open");
-    game.map = parse_map(map_fd);
-	create_game(&game);
-	return (0);
+	game->mlx = mlx_init();
+	game->mlx_win = mlx_new_window(game->mlx, game->map->width * 32, game->map->height * 32, "So Long!");
+	mlx_loop(game->mlx);
 }

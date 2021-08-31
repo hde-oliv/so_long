@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/08/24 13:38:11 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/08/31 10:19:05 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_game
 	void	*mlx;
 	void	*mlx_win;
 }	t_game;
+
+void	create_game(t_game *game);
 
 /* error handling */
 # define EINVM "Invalid map.\n"
