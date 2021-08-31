@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/08/31 10:19:05 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/08/31 10:54:08 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,36 @@ bool	validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
 
 /* create_game */
+# define CLOSE_W 17
+
+typedef struct s_img
+{
+	void	*ptr;
+	char	*pixels;
+	int		bpp;
+	int		line_size;
+	int		endian;
+	int		x;
+	int		y;
+}	t_img;
+
 typedef struct s_game
 {
 	t_map	*map;
 	void	*mlx;
 	void	*mlx_win;
+	t_img	*heroine;
+	t_img	*wall;
+	t_img	*bg;
+	t_img	*coin;
+	t_img	*exit;
 }	t_game;
 
 void	create_game(t_game *game);
+void	allocate_sprites(t_game *game);
+void	create_images(t_game *game);
+void	put_image(t_game *game, char pos, int x, int y);
+void	make_map(t_game *game);
 
 /* error handling */
 # define EINVM "Invalid map.\n"
