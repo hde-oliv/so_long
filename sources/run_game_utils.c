@@ -101,14 +101,13 @@ bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 
 	i = -1;
 	tmp = game->map->rows;
-	/* if (is_wall(game, wanted_x, wanted_y)) */
-	/* 	return (false); */
 	while (i++ <= wanted_y && tmp)
 	{
 		j = -1;
 		while (j++ <= wanted_x)
 		{
 			if (i == wanted_y && j == wanted_x)
+			{
 				if (((char *)(tmp->content))[j] != '1')
 				{
 					*pos = ((char *)(tmp->content))[j];
@@ -116,17 +115,9 @@ bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 						((char *)(tmp->content))[j] = '0';
 					return (true);
 				}
+			}
 		}
 		tmp = tmp->next;
 	}
 	return (false);
 }
-
-/* bool	is_wall(t_game *game, int wanted_x, int wanted_y) */
-/* { */
-/* 	if (wanted_y >= game->map->height || !wanted_y) */
-/* 		return (true); */
-/* 	else if (wanted_x >= game->map->width || !wanted_x) */
-/* 		return (true); */
-/* 	return (false); */
-/* } */
