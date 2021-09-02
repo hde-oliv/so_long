@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:39:23 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/02 16:02:51 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/09/02 17:18:04 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	handle_keys(int key, void *p)
 	else if (key == ESC_KEY)
 		end_game(game);
 	refresh_player(game);
-	printf("Moves: %d\n", moves);
+	printf("Moves: %d | Remaining Coins: %d\n", moves, game->coins);
 	return (0);
 }
 
@@ -63,11 +63,18 @@ int	handle_buttons(void *p)
 void	end_game(t_game *game)
 {
 	mlx_clear_window(game->mlx, game->mlx_win);
+	mlx_destroy_image(game->mlx, game->heroine->ptr);
+	mlx_destroy_image(game->mlx, game->bg->ptr);
+	mlx_destroy_image(game->mlx, game->exit->ptr);
+	mlx_destroy_image(game->mlx, game->wall->ptr);
+	mlx_destroy_image(game->mlx, game->coin->ptr);
 	free(game->heroine);
 	free(game->bg);
 	free(game->exit);
 	free(game->wall);
 	free(game->coin);
 	ft_lstclear(&game->map->rows, &free);
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	mlx_destroy_display(game->mlx);
 	exit(0);
 }

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   create_game_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/02 16:11:14 by hde-oliv         ###   ########.fr       */
+/*   Created: 2021/09/02 17:23/28 by hde-oliv          #+#    #+#             */
+/*   Updated: 2021/09/02 17:23:28 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "mlx.h"
 #include "so_long.h"
+#include "mlx.h"
 
-/*
-** parse_map: OK
-** create_game: OK
-** run_game: OK
-** end_game: TODO
-*/
-
-int	main(int argc, char *argv[])
+void	set_collectibles_quantity(t_game *game)
 {
-	t_game	game;
-	int		map_fd;
+    t_list	*rows;
 
-	if (argc != 2)
-		error("main");
-	if (!is_map(argv[1]))
-		error("is_map");
-	map_fd = open(argv[1], O_RDONLY);
-	if (map_fd == -1)
-		error("open");
-    game.map = parse_map(map_fd);
-	create_game(&game);
-	run_game(&game);
-	mlx_loop(game.mlx);
-	return (0);
+	game->coins = 0;
+    rows = game->map->rows;
+	while (rows)
+	{
+		game->coins += count_collectibles(rows->content);
+		rows = rows->next;
+	}
 }
