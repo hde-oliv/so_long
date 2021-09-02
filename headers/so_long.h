@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/02 16:53:42 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/09/02 17:24:26 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	set_collectibles_quantity(t_game *game);
 void	create_images(t_game *game);
 void	put_image(t_game *game, char pos, int x, int y);
 void	make_map(t_game *game);
+void	*wrap_xpm(t_game *game, char *filename, t_img *img);
+void	*wrap_data(t_img *img);
 
 /* run game */
 # define W_KEY 119
@@ -82,12 +84,13 @@ void	make_map(t_game *game);
 # define X_BUTTON_EV 17
 # define NO_MASK 0L
 # define KEY_PRESS_EV 2
-# define KEY_PRESS_MASK 1L<<0
+# define KEY_PRESS_MASK 1L
 
 void	run_game(t_game *game);
 int		handle_keys(int key, void *p);
 void	refresh_player(t_game *game);
 bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos);
+bool	is_wall(t_game *game, int wanted_x, int wanted_y);
 void	move_player_up(t_game *game, int *moves);
 void	move_player_down(t_game *game, int *moves);
 void	move_player_left(t_game *game, int *moves);

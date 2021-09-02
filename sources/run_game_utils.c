@@ -23,7 +23,8 @@ void	move_player_up(t_game *game, int *moves)
 			game->coins--;
 		if (pos != 'E')
 		{
-			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, game->heroine_x * 32, game->heroine_y * 32);
+			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
+									game->heroine_x * 32, game->heroine_y * 32);
 			game->heroine_y--;
 			(*moves)++;
 		}
@@ -31,6 +32,7 @@ void	move_player_up(t_game *game, int *moves)
 			end_game(game);
 	}
 }
+
 void	move_player_down(t_game *game, int *moves)
 {
 	char	pos;
@@ -41,7 +43,8 @@ void	move_player_down(t_game *game, int *moves)
 			game->coins--;
 		if (pos != 'E')
 		{
-			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, game->heroine_x * 32, game->heroine_y * 32);
+			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
+									game->heroine_x * 32, game->heroine_y * 32);
 			game->heroine_y++;
 			(*moves)++;
 		}
@@ -49,6 +52,7 @@ void	move_player_down(t_game *game, int *moves)
 			end_game(game);
 	}
 }
+
 void	move_player_left(t_game *game, int *moves)
 {
 	char	pos;
@@ -59,7 +63,8 @@ void	move_player_left(t_game *game, int *moves)
 			game->coins--;
 		if (pos != 'E')
 		{
-			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, game->heroine_x * 32, game->heroine_y * 32);
+			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
+									game->heroine_x * 32, game->heroine_y * 32);
 			game->heroine_x--;
 			(*moves)++;
 		}
@@ -78,7 +83,8 @@ void	move_player_right(t_game *game, int *moves)
 			game->coins--;
 		if (pos != 'E')
 		{
-			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, game->heroine_x * 32, game->heroine_y * 32);
+			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
+									game->heroine_x * 32, game->heroine_y * 32);
 			game->heroine_x++;
 			(*moves)++;
 		}
@@ -95,17 +101,14 @@ bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 
 	i = -1;
 	tmp = game->map->rows;
-	if (wanted_y >= game->map->height || !wanted_y)
-		return (false);
-	else if (wanted_x >= game->map->width || !wanted_x)
-		return (false);
+	/* if (is_wall(game, wanted_x, wanted_y)) */
+	/* 	return (false); */
 	while (i++ <= wanted_y && tmp)
 	{
 		j = -1;
 		while (j++ <= wanted_x)
 		{
 			if (i == wanted_y && j == wanted_x)
-			{
 				if (((char *)(tmp->content))[j] != '1')
 				{
 					*pos = ((char *)(tmp->content))[j];
@@ -113,9 +116,17 @@ bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 						((char *)(tmp->content))[j] = '0';
 					return (true);
 				}
-			}
 		}
 		tmp = tmp->next;
 	}
 	return (false);
 }
+
+/* bool	is_wall(t_game *game, int wanted_x, int wanted_y) */
+/* { */
+/* 	if (wanted_y >= game->map->height || !wanted_y) */
+/* 		return (true); */
+/* 	else if (wanted_x >= game->map->width || !wanted_x) */
+/* 		return (true); */
+/* 	return (false); */
+/* } */

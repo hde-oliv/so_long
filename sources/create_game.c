@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 10:16:33 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/02 16:53:12 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/09/02 17:26:19 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,16 @@ void	allocate_sprites(t_game *game)
 
 void	create_images(t_game *game)
 {
-	game->heroine->ptr = mlx_xpm_file_to_image(game->mlx, "./assets/heroine.xpm", \
-											   &game->heroine->x, &game->heroine->y);
-	game->heroine->pixels = mlx_get_data_addr(game->heroine->ptr, &game->heroine->bpp, \
-											  &game->heroine->line_size, &game->heroine->endian);
-	game->bg->ptr = mlx_xpm_file_to_image(game->mlx, "./assets/bg.xpm", \
-										  &game->bg->x, &game->bg->y);
-	game->bg->pixels = mlx_get_data_addr(game->bg->ptr, &game->bg->bpp, \
-										 &game->bg->line_size, &game->bg->endian);
-	game->wall->ptr = mlx_xpm_file_to_image(game->mlx, "./assets/wall.xpm", \
-											&game->wall->x, &game->wall->y);
-	game->wall->pixels = mlx_get_data_addr(game->wall->ptr, &game->wall->bpp, \
-										   &game->wall->line_size, &game->wall->endian);
-	game->coin->ptr = mlx_xpm_file_to_image(game->mlx, "./assets/coin.xpm", \
-											&game->coin->x, &game->coin->y);
-	game->coin->pixels = mlx_get_data_addr(game->coin->ptr, &game->coin->bpp, \
-										   &game->coin->line_size, &game->coin->endian);
-	game->exit->ptr = mlx_xpm_file_to_image(game->mlx, "./assets/exit.xpm", \
-											&game->exit->x, &game->exit->y);
-	game->exit->pixels = mlx_get_data_addr(game->exit->ptr, &game->exit->bpp, \
-										   &game->exit->line_size, &game->exit->endian);
+	game->heroine->ptr = wrap_xpm(game, "./assets/heroine.xpm", game->heroine);
+	game->bg->ptr = wrap_xpm(game, "./assets/bg.xpm", game->bg);
+	game->wall->ptr = wrap_xpm(game, "./assets/wall.xpm", game->wall);
+	game->coin->ptr = wrap_xpm(game, "./assets/coin.xpm", game->coin);
+	game->exit->ptr = wrap_xpm(game, "./assets/exit.xpm", game->exit);
+	game->heroine->pixels = wrap_data(game->heroine);
+	game->bg->pixels = wrap_data(game->bg);
+	game->wall->pixels = wrap_data(game->wall);
+	game->coin->pixels = wrap_data(game->coin);
+	game->exit->pixels = wrap_data(game->exit);
 }
 
 void	put_image(t_game *game, char pos, int x, int y)
