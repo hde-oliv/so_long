@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:23:37 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/01 18:19:36 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:04:10 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /*
 ** parse_map: OK
 ** create_game: OK
-** run_game: TODO
+** run_game: OK
 ** end_game: TODO
 */
 
