@@ -1,4 +1,4 @@
-FSRC	:=	parse_map.c parse_map_utils.c handle_error.c create_game.c
+FSRC	:=	parse_map.c parse_map_utils.c handle_error.c create_game.c run_game.c run_game_utils.c
 MSRC	:=	so_long.c
 TSRC	:=	tests.c test_is_map.c test_validate_row.c
 

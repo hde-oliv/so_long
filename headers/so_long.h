@@ -71,6 +71,17 @@ void	create_images(t_game *game);
 void	put_image(t_game *game, char pos, int x, int y);
 void	make_map(t_game *game);
 
+/* run game */
+void	run_game(t_game *game);
+void	handle_player(t_game *game);
+int		move_player(int key, void *p);
+void	refresh_player(t_game *game);
+bool	valid_move(t_game *game, int wanted_x, int wanted_y);
+void	move_player_up(t_game *game);
+void	move_player_down(t_game *game);
+void	move_player_left(t_game *game);
+void	move_player_right(t_game *game);
+
 /* error handling */
 # define EINVM "Invalid map.\n"
 # define EIEMP "Empty map.\n"
