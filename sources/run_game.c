@@ -74,7 +74,9 @@ void	end_game(t_game *game)
 	free(game->wall);
 	free(game->coin);
 	ft_lstclear(&game->map->rows, &free);
+	free(game->map);
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	mlx_destroy_display(game->mlx);
+	free(game->mlx);
 	exit(0);
 }
