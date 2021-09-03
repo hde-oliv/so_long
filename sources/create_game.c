@@ -16,8 +16,8 @@
 void	create_game(t_game *game)
 {
 	game->mlx = mlx_init();
-	game->mlx_win = mlx_new_window(game->mlx, game->map->width * 32, \
-								   game->map->height * 32, "So Long!");
+	game->mlx_win = mlx_new_window(game->mlx, game->map->width * 16, \
+								   game->map->height * 16, "So Long!");
 	set_collectibles_quantity(game);
 	allocate_sprites(game);
 	create_images(game);
@@ -61,23 +61,23 @@ void	put_image(t_game *game, char pos, int x, int y)
 {
 	if (pos == '1')
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
-								game->wall->ptr, x * 32, y * 32);
+								game->wall->ptr, x * 16, y * 16);
 	else if (pos == '0')
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
-								game->bg->ptr, x * 32, y * 32);
+								game->bg->ptr, x * 16, y * 16);
 	else if (pos == 'P')
 	{
 		game->heroine_x = x;
 		game->heroine_y = y;
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
-								game->bg->ptr, x * 32, y * 32);
+								game->bg->ptr, x * 16, y * 16);
 	}
 	else if (pos == 'C')
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
-								game->coin->ptr, x * 32, y * 32);
+								game->coin->ptr, x * 16, y * 16);
 	else if (pos == 'E')
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
-								game->exit->ptr, x * 32, y * 32);
+								game->exit->ptr, x * 16, y * 16);
 }
 
 void	make_map(t_game *game)

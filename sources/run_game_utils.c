@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:37:46 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/09/02 17:22:06 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/09/02 19:19:48 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	move_player_up(t_game *game, int *moves)
 		if (pos != 'E')
 		{
 			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
-									game->heroine_x * 32, game->heroine_y * 32);
+									game->heroine_x * 16, game->heroine_y * 16);
 			game->heroine_y--;
 			(*moves)++;
 		}
@@ -44,7 +44,7 @@ void	move_player_down(t_game *game, int *moves)
 		if (pos != 'E')
 		{
 			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
-									game->heroine_x * 32, game->heroine_y * 32);
+									game->heroine_x * 16, game->heroine_y * 16);
 			game->heroine_y++;
 			(*moves)++;
 		}
@@ -64,7 +64,7 @@ void	move_player_left(t_game *game, int *moves)
 		if (pos != 'E')
 		{
 			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
-									game->heroine_x * 32, game->heroine_y * 32);
+									game->heroine_x * 16, game->heroine_y * 16);
 			game->heroine_x--;
 			(*moves)++;
 		}
@@ -84,7 +84,7 @@ void	move_player_right(t_game *game, int *moves)
 		if (pos != 'E')
 		{
 			mlx_put_image_to_window(game->mlx, game->mlx_win, game->bg->ptr, \
-									game->heroine_x * 32, game->heroine_y * 32);
+									game->heroine_x * 16, game->heroine_y * 16);
 			game->heroine_x++;
 			(*moves)++;
 		}

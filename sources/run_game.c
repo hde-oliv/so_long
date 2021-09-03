@@ -26,8 +26,8 @@ void	refresh_player(t_game *game)
 	mlx_put_image_to_window(game->mlx, \
 							game->mlx_win, \
 							game->heroine->ptr, \
-							game->heroine_x * 32, \
-							game->heroine_y * 32);
+							game->heroine_x * 16, \
+							game->heroine_y * 16);
 }
 
 int	handle_keys(int key, void *p)
