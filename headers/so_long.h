@@ -33,6 +33,7 @@ int		count_players(char *row);
 int		count_collectibles(char *row);
 bool	strcchr(char *s, char c);
 bool	validate_row(char *row);
+bool	validate_rows(t_list *rows);
 bool	validate_map(t_list *rows);
 bool	validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
@@ -106,5 +107,5 @@ int		handle_buttons(void *p);
 
 void	error(const char *err_func);
 void	r_error(const char *function);
-void	invalid_map(t_list **rows);
+void	invalid_map(t_list **rows, char *row);
 #endif

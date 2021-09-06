@@ -24,12 +24,10 @@ t_map	*parse_map(int fd)
 	{
 		if (!row)
 			error("malloc");
-		else if (!validate_row(row))
-			invalid_map(&rows);
 		ft_lstadd_back(&rows, ft_lstnew(row));
 	}
-	if (!validate_map(rows))
-		error("parse_map");
+	if (!validate_rows(rows) || !validate_map(rows))
+		invalid_map(&rows, row);
 	game_map = (t_map *) malloc(sizeof(t_map));
 	if (!game_map)
 		error("malloc");
@@ -38,6 +36,17 @@ t_map	*parse_map(int fd)
 	game_map->rows = rows;
 	free(row);
 	return (game_map);
+}
+
+bool	validate_rows(t_list *rows)
+{
+	while (rows)
+	{
+		if (!validate_row(rows->content))
+			return (false);
+		rows = rows->next;
+	}
+	return (true);
 }
 
 bool	validate_row(char *row)

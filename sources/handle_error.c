@@ -33,10 +33,12 @@ void	error(const char *err_func)
 	exit(1);
 }
 
-void	invalid_map(t_list **rows)
+void	invalid_map(t_list **rows, char *row)
 {
 	void	(*free_ptr)(void *);
 
+	if (row)
+		free(row);
 	free_ptr = &free;
 	ft_lstclear(rows, free_ptr);
 	error("parse_map");
