@@ -108,4 +108,8 @@ int		handle_buttons(void *p);
 void	error(const char *err_func);
 void	r_error(const char *function);
 void	invalid_map(t_list **rows, char *row);
+
+/* focus handling */
+int		handle_minimize(void *p);
+int		handle_focus(void *p);
 #endif
