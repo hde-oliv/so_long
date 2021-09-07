@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_minimize.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/07 12:39:23 by hde-oliv          #+#    #+#             */
+/*   Updated: 2021/09/07 17:18:04 by hde-oliv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 #include "mlx.h"
 
-static void	put_image_(t_game *game, char pos, int x, int y)
+static void	put_image_m(t_game *game, char pos, int x, int y)
 {
 	if (pos == '1')
 		mlx_put_image_to_window(game->mlx, game->mlx_win, \
@@ -17,43 +29,12 @@ static void	put_image_(t_game *game, char pos, int x, int y)
 								game->exit->ptr, x * 16, y * 16);
 }
 
-static void	make_map_(t_game *game)
-{
-	int		i;
-	int		j;
-	t_list	*tmp;
-
-	i = -1;
-	tmp = game->map->rows;
-	while (i++ < game->map->height && tmp)
-	{
-		j = -1;
-		while (j++ < game->map->width)
-		{
-			put_image_(game, ((char *)(tmp->content))[j], j, i);
-		}
-		tmp = tmp->next;
-	}
-}
-
-int	handle_focus(void *p)
-{
-	t_game *game;
-
-	game = (t_game *) p;
-	make_map_(game);
-	refresh_player(game);
-	return (0);
-}
-
 int	handle_minimize(void *p)
 {
-	t_game *game;
+	t_game	*game;
 
 	game = (t_game *) p;
-	make_map_(game);
+	make_map(game, &put_image_m);
 	refresh_player(game);
 	return (0);
 }
-
-

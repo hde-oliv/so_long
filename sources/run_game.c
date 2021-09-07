@@ -19,7 +19,7 @@ void	run_game(t_game *game)
 	refresh_player(game);
 	mlx_hook(game->mlx_win, KEY_PRESS_EV, KEY_PRESS_MASK, &handle_keys, game);
 	mlx_hook(game->mlx_win, X_BUTTON_EV, NO_MASK, &handle_buttons, game);
-	mlx_hook(game->mlx_win, 9, (1L<<21), &handle_minimize, game);
+	mlx_hook(game->mlx_win, FOCUS_EV, FOCUS_MASK, &handle_minimize, game);
 }
 
 void	refresh_player(t_game *game)

@@ -21,7 +21,7 @@ void	create_game(t_game *game)
 	set_collectibles_quantity(game);
 	allocate_sprites(game);
 	create_images(game);
-	make_map(game);
+	make_map(game, &put_image);
 }
 
 void	allocate_sprites(t_game *game)
@@ -80,7 +80,7 @@ void	put_image(t_game *game, char pos, int x, int y)
 								game->exit->ptr, x * 16, y * 16);
 }
 
-void	make_map(t_game *game)
+void	make_map(t_game *game, void (*f)(t_game *, char, int, int))
 {
 	int		i;
 	int		j;
@@ -93,7 +93,7 @@ void	make_map(t_game *game)
 		j = -1;
 		while (j++ < game->map->width)
 		{
-			put_image(game, ((char *)(tmp->content))[j], j, i);
+			(f)(game, ((char *)(tmp->content))[j], j, i);
 		}
 		tmp = tmp->next;
 	}

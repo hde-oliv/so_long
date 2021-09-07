@@ -72,7 +72,7 @@ void	allocate_sprites(t_game *game);
 void	set_collectibles_quantity(t_game *game);
 void	create_images(t_game *game);
 void	put_image(t_game *game, char pos, int x, int y);
-void	make_map(t_game *game);
+void	make_map(t_game *game, void (*f)(t_game *, char, int, int));
 void	*wrap_xpm(t_game *game, char *filename, t_img *img);
 void	*wrap_data(t_img *img);
 
@@ -86,6 +86,8 @@ void	*wrap_data(t_img *img);
 # define NO_MASK 0L
 # define KEY_PRESS_EV 2
 # define KEY_PRESS_MASK 1L
+# define FOCUS_EV 9
+# define FOCUS_MASK 2097152
 
 void	run_game(t_game *game);
 int		handle_keys(int key, void *p);
@@ -111,5 +113,4 @@ void	invalid_map(t_list **rows, char *row);
 
 /* focus handling */
 int		handle_minimize(void *p);
-int		handle_focus(void *p);
 #endif
