@@ -14,13 +14,6 @@
 #include "mlx.h"
 #include "so_long.h"
 
-/*
-** parse_map: OK
-** create_game: OK
-** run_game: OK
-** end_game: TODO
-*/
-
 int	main(int argc, char *argv[])
 {
 	t_game	game;
