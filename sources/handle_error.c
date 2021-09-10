@@ -23,7 +23,7 @@ void	r_error(const char *function)
 		printf("is_map: %s", EINAM);
 }
 
-void	error(const char *err_func)
+void	err(const char *err_func)
 {
 	printf("Error\n");
 	if (errno == 0)
@@ -41,5 +41,5 @@ void	invalid_map(t_list **rows, char *row)
 		free(row);
 	free_ptr = &free;
 	ft_lstclear(rows, free_ptr);
-	error("parse_map");
+	err("parse_map");
 }

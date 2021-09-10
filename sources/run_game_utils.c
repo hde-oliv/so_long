@@ -93,7 +93,7 @@ void	move_player_right(t_game *game, int *moves)
 	}
 }
 
-bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
+int	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 {
 	int		i;
 	int		j;
@@ -113,11 +113,11 @@ bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos)
 					*pos = ((char *)(tmp->content))[j];
 					if (((char *)(tmp->content))[j] == 'C')
 						((char *)(tmp->content))[j] = '0';
-					return (true);
+					return (1);
 				}
 			}
 		}
 		tmp = tmp->next;
 	}
-	return (false);
+	return (0);
 }

@@ -14,20 +14,12 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-typedef struct s_btree
-{
-	struct s_btree	*left;
-	struct s_btree	*right;
-	void			*item;
-}	t_btree;
 
 /* libc */
 /**
@@ -541,18 +533,5 @@ long long	ft_atoll(const char *str);
 
 int			get_next_line(int fd, char **line);
 # define BUFFER_SIZE 10
-
-/* btree functions TODO */
-t_btree		*btree_create_node(void *item);
-void		btree_apply_prefix(t_btree *root, void (*applyf)(void *));
-void		btree_apply_infix(t_btree *root, void (*applyf)(void *));
-void		btree_apply_suffix(t_btree *root, void (*applyf)(void *));
-void		btree_insert_data(t_btree **root, void *item, \
-int (*cmpf)(void *, void *));
-void		*btree_search_item(t_btree *root, void *data_ref, \
-int *(*cmpf)(void *, void *));
-int			btree_level_count(t_btree *root);
-void		btree_apply_by_level(t_btree *root, \
-void (*applyf)(void *item, int current_level, int is_first_elem));
 
 #endif

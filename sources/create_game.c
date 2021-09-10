@@ -28,19 +28,19 @@ void	allocate_sprites(t_game *game)
 {
 	game->heroine = (t_img *) malloc(sizeof(t_img));
 	if (!game->heroine)
-		error("malloc");
+		err("malloc");
 	game->wall = (t_img *) malloc(sizeof(t_img));
 	if (!game->wall)
-		error("malloc");
+		err("malloc");
 	game->bg = (t_img *) malloc(sizeof(t_img));
 	if (!game->bg)
-		error("malloc");
+		err("malloc");
 	game->coin = (t_img *) malloc(sizeof(t_img));
 	if (!game->coin)
-		error("malloc");
+		err("malloc");
 	game->exit = (t_img *) malloc(sizeof(t_img));
 	if (!game->exit)
-		error("malloc");
+		err("malloc");
 }
 
 void	create_images(t_game *game)

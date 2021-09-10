@@ -12,11 +12,10 @@
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include <stdbool.h>
-# include <errno.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include <unistd.h>
+# include <errno.h>
+# include <string.h>
 # include "libft.h"
 
 /* map parsing */
@@ -27,15 +26,15 @@ typedef struct s_map
 	t_list	*rows;
 }	t_map;
 
-bool	is_map(char *arg);
+int		is_map(char *arg);
 int		count_exits(char *row);
 int		count_players(char *row);
 int		count_collectibles(char *row);
-bool	strcchr(char *s, char c);
-bool	validate_row(char *row);
-bool	validate_rows(t_list *rows);
-bool	validate_map(t_list *rows);
-bool	validate_walls(t_list *rows);
+int		strcchr(char *s, char c);
+int		validate_row(char *row);
+int		validate_rows(t_list *rows);
+int		validate_map(t_list *rows);
+int		validate_walls(t_list *rows);
 t_map	*parse_map(int fd);
 
 /* create_game */
@@ -92,8 +91,8 @@ void	*wrap_data(t_img *img);
 void	run_game(t_game *game);
 int		handle_keys(int key, void *p);
 void	refresh_player(t_game *game);
-bool	valid_move(t_game *game, int wanted_x, int wanted_y, char *pos);
-bool	is_wall(t_game *game, int wanted_x, int wanted_y);
+int		valid_move(t_game *game, int wanted_x, int wanted_y, char *pos);
+int		is_wall(t_game *game, int wanted_x, int wanted_y);
 void	move_player_up(t_game *game, int *moves);
 void	move_player_down(t_game *game, int *moves);
 void	move_player_left(t_game *game, int *moves);
@@ -107,7 +106,7 @@ int		handle_buttons(void *p);
 # define EINAR "Invalid number of arguments.\n"
 # define EINAM "The argument is not a map.\n"
 
-void	error(const char *err_func);
+void	err(const char *err_func);
 void	r_error(const char *function);
 void	invalid_map(t_list **rows, char *row);
 

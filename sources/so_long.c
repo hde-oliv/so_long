@@ -20,12 +20,12 @@ int	main(int argc, char *argv[])
 	int		map_fd;
 
 	if (argc != 2)
-		error("main");
+		err("main");
 	if (!is_map(argv[1]))
-		error("is_map");
+		err("is_map");
 	map_fd = open(argv[1], O_RDONLY);
 	if (map_fd == -1)
-		error("open");
+		err("open");
 	game.map = parse_map(map_fd);
 	create_game(&game);
 	run_game(&game);

@@ -23,14 +23,14 @@ t_map	*parse_map(int fd)
 	while (get_next_line(fd, &row) == 1)
 	{
 		if (!row)
-			error("malloc");
+			err("malloc");
 		ft_lstadd_back(&rows, ft_lstnew(row));
 	}
 	if (!validate_rows(rows) || !validate_map(rows))
 		invalid_map(&rows, row);
 	game_map = (t_map *) malloc(sizeof(t_map));
 	if (!game_map)
-		error("malloc");
+		err("malloc");
 	game_map->width = ft_strlen(rows->content);
 	game_map->height = ft_lstsize(rows);
 	game_map->rows = rows;
@@ -38,18 +38,18 @@ t_map	*parse_map(int fd)
 	return (game_map);
 }
 
-bool	validate_rows(t_list *rows)
+int	validate_rows(t_list *rows)
 {
 	while (rows)
 	{
 		if (!validate_row(rows->content))
-			return (false);
+			return (0);
 		rows = rows->next;
 	}
-	return (true);
+	return (1);
 }
 
-bool	validate_row(char *row)
+int	validate_row(char *row)
 {
 	static int	fixed_len;
 	int			len;
@@ -58,19 +58,19 @@ bool	validate_row(char *row)
 		fixed_len = ft_strlen(row);
 	len = ft_strlen(row);
 	if (len != fixed_len || fixed_len < 3)
-		return (false);
+		return (0);
 	while (len--)
 	{
 		if (row[len] == 'C' || row[len] == 'E' || row[len] == 'P' || \
 			row[len] == '0' || row[len] == '1')
 			continue ;
 		else
-			return (false);
+			return (0);
 	}
-	return (true);
+	return (1);
 }
 
-bool	validate_map(t_list *rows)
+int	validate_map(t_list *rows)
 {
 	static int	collectibles;
 	static int	exits;
@@ -86,27 +86,27 @@ bool	validate_map(t_list *rows)
 		rows = rows->next;
 	}
 	if (!collectibles)
-		return (false);
+		return (0);
 	else if (!exits)
-		return (false);
+		return (0);
 	else if (!players || players > 1)
-		return (false);
+		return (0);
 	else if (!walls)
-		return (false);
-	return (true);
+		return (0);
+	return (1);
 }
 
-bool	validate_walls(t_list *rows)
+int	validate_walls(t_list *rows)
 {
 	int		row_quantity;
 	int		row_size;
 	int		counter;
-	bool	answer;
+	int	answer;
 
 	counter = 0;
 	row_quantity = ft_lstsize(rows);
 	row_size = ft_strlen(rows->content);
-	answer = true;
+	answer = 1;
 	while (counter < row_quantity)
 	{
 		if (counter == 0 || counter == (row_quantity - 1))
@@ -114,10 +114,10 @@ bool	validate_walls(t_list *rows)
 		else
 			answer = *((char *)rows->content) == '1' && \
 				*((char *)rows->content + row_size - 1) == '1';
-		if (answer == false)
-			return (false);
+		if (answer == 0)
+			return (0);
 		rows = rows->next;
 		counter++;
 	}
-	return (true);
+	return (1);
 }

@@ -55,23 +55,23 @@ int	count_collectibles(char *row)
 	return (answer);
 }
 
-bool	is_map(char *arg)
+int	is_map(char *arg)
 {
 	char	*dot_location;
 
 	dot_location = ft_strrchr(arg, '.');
 	if (dot_location)
 		return (!ft_strncmp(dot_location, ".ber", 4));
-	return (false);
+	return (0);
 }
 
-bool	strcchr(char *s, char c)
+int	strcchr(char *s, char c)
 {
 	while (*s)
 	{
 		if (*s != c)
-			return (false);
+			return (0);
 		s++;
 	}
-	return (true);
+	return (1);
 }
