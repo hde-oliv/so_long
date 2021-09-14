@@ -101,7 +101,7 @@ int	validate_walls(t_list *rows)
 	int		row_quantity;
 	int		row_size;
 	int		counter;
-	int	answer;
+	int		answer;
 
 	counter = 0;
 	row_quantity = ft_lstsize(rows);
