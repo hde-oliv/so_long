@@ -9,8 +9,9 @@
 
 ## What it is
 A basic 2D game using MiniLibX (a wrapper for X server).  
-The goal is to pick every coin and then exit from the map.
+The goal is to pick every coin and then exit from the map.  
 
+Succeeded with 105%
 
 ## Skills
  - Imperative programming
