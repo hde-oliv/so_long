@@ -1,5 +1,9 @@
 # So Long...
 
+<div align="center">
+  <img src="https://i.imgur.com/WwFiJGM.png"/>
+</div>  
+<br/>
 ...and Thanks for All the Fish
 
 ## What is it?
@@ -51,11 +55,6 @@ Then, run the binary providing the map's path.
 
 The folder `tests/tests_maps`, has some map examples.  
 
-<br/>
-
-<div align="center">
-  <img src="https://i.imgur.com/WwFiJGM.png"/>
-</div>
 
 ## Found any bugs?
 Feel free to contact me or create an issue!
