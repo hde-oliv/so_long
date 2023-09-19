@@ -6,6 +6,10 @@
 <br/>
 ...and Thanks for All the Fish
 
+[![Norminette](https://github.com/hde-oliv/so_long/actions/workflows/norminette.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/norminette.yml)
+[![Build](https://github.com/hde-oliv/so_long/actions/workflows/build.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/build.yml)
+[![Tests](https://github.com/hde-oliv/so_long/actions/workflows/tests.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/tests.yml)
+
 ## What is it?
 It's a simple rendition of a top-down 2D game, made with C and utilizing a custom-made graphics library called MiniLibX, a basic wrapper for the [X Window System](https://pt.wikipedia.org/wiki/X_Window_System).
 The goal is to pick up every coin and then go to the exit on the map.  
