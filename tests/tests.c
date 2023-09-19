@@ -1,6 +1,6 @@
 #include "tests.h"
 
-static int	err;
+static int	error;
 
 static void print_result(bool check, int number)
 {
@@ -9,7 +9,7 @@ static void print_result(bool check, int number)
 	else
 	{
 		printf("%i.KO   ", number);
-		err = 1;
+		error = 1;
 	}
 }
 
@@ -38,5 +38,5 @@ int	main(void)
 	print_result(validate_row_with_invalid_row_4(), 6);
 	printf("\n");
 
-	return (err);
+	return (error);
 }
