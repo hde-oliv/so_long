@@ -22,8 +22,7 @@ Requirements:
 ```shell
 # It needs X11 miscellaneous extensions library and utility functions from BSD
 # Also, I recommend compiling with clang
-
-libxext-dev libbsd-dev clang
+sudo apt install libx11-dev xorg-dev libbsd-dev clang
 ```
 
 After compiling it, you'll need a map (just a text file) with the extension `.ber` with the following configuration:
