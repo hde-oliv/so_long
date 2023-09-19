@@ -4,11 +4,12 @@
   <img src="https://i.imgur.com/WwFiJGM.png"/>
 </div>  
 <br/>
-...and Thanks for All the Fish
 
-<br/>
+
+
 <div align="center">
-
+<p>...and Thanks for All the Fish</p>
+  
 [![Norminette](https://github.com/hde-oliv/so_long/actions/workflows/norminette.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/norminette.yml)
 [![Build](https://github.com/hde-oliv/so_long/actions/workflows/build.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/build.yml)
 [![Tests](https://github.com/hde-oliv/so_long/actions/workflows/tests.yml/badge.svg)](https://github.com/hde-oliv/so_long/actions/workflows/tests.yml)
