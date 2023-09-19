@@ -1,10 +1,12 @@
-# So Long!
+# So Long...
 
-## What it is
-A basic 2D game using MiniLibX (a wrapper for X server).  
-The goal is to pick every coin and then exit from the map.  
+...and Thanks for All the Fish
 
-Succeeded with 105%
+## What is it?
+It's a simple rendition of a top-down 2D game, made with C and utilizing a custom-made graphics library called MiniLibX, a basic wrapper for the [X Window System](https://pt.wikipedia.org/wiki/X_Window_System).
+The goal is to pick up every coin and then go to the exit on the map.  
+
+**Succeeded with 105%**
 
 ## Skills
  - Imperative programming
@@ -12,16 +14,19 @@ Succeeded with 105%
 
 
 ## How it works
-Requisites:
+Requirements:
 ```shell
-clang
+# It needs X11 miscellaneous extensions library and utility functions from BSD
+# Also, I recommend compiling with clang
+
+libxext-dev libbsd-dev clang
 ```
 
-After compiling it, you'll need a map in with the extension `.ber` with this configuration:
- - Needs to be a rectangle.
- - Needs to be surrounded by walls.
- - Needs to have a least one coin and one exit.
- - Needs to have only one player.
+After compiling it, you'll need a map (just a text file) with the extension `.ber` with the following configuration:
+ - It has to be a rectangle.
+ - It has to be surrounded by walls.
+ - It needs to have at least one coin and one exit.
+ - It needs to have only one player.
 
 Key:
  - 1: wall
@@ -39,16 +44,22 @@ Key:
  11111111111
  ```
 
-Then run the binary providing the map's path.
+Then, run the binary providing the map's path.
 ``` sh
 ./so_long <path-to-map>
 ```
+
+The folder `tests/tests_maps`, has some map examples.  
+
+<br/>
 
 <div align="center">
   <img src="https://i.imgur.com/WwFiJGM.png"/>
 </div>
 
-## Found any bug?
+## Found any bugs?
 Feel free to contact me or create an issue!
 
-###### Licensed under GPLv3
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [COPYING](https://github.com/hde-oliv/so_long/blob/master/COPYING) file for details.
+
