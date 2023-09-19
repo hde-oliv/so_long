@@ -17,7 +17,7 @@ void	create_game(t_game *game)
 {
 	game->mlx = mlx_init();
 	game->mlx_win = mlx_new_window(game->mlx, game->map->width * 16, \
-								   game->map->height * 16, "So Long!");
+								game->map->height * 16, "So Long!");
 	set_collectibles_quantity(game);
 	allocate_sprites(game);
 	create_images(game);

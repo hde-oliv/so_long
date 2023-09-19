@@ -35,5 +35,5 @@ void	*wrap_xpm(t_game *game, char *filename, t_img *img)
 void	*wrap_data(t_img *img)
 {
 	return (mlx_get_data_addr(img->ptr, &img->bpp, \
-							  &img->line_size, &img->endian));
+							&img->line_size, &img->endian));
 }
