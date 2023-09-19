@@ -2,6 +2,7 @@
 # define TESTS_H
 # include "so_long.h"
 # include <stdio.h>
+# include <stdbool.h>
 
 bool	is_map_with_valid_name(void);
 bool	is_map_with_invalid_name_1(void);
