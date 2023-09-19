@@ -17,7 +17,7 @@
 </div>
 
 ## What is it?
-It's a simple rendition of a top-down 2D game, made with C and utilizing a custom-made graphics library called MiniLibX, a basic wrapper for the [X Window System](https://pt.wikipedia.org/wiki/X_Window_System).
+It's a simple rendition of a top-down 2D game, made with C and utilizing a custom-made graphics library called MiniLibX, a basic wrapper for the [X Window System](https://pt.wikipedia.org/wiki/X_Window_System).  
 The goal is to pick up every coin and then go to the exit on the map.  
 
 **Succeeded with 105%**
